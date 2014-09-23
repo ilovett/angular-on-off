@@ -9,10 +9,7 @@
       this._listeners = {};
     }
 
-    onOffPrototype.prototype.on = function(event, callback, context) {
-
-      // bind context if it is provided
-      callback = (context ? callback.bind(context) : callback);
+    onOffPrototype.prototype.on = function(event, callback) {
 
       // ensure array exists
       if ( ! this._listeners[event]) {
@@ -23,8 +20,20 @@
       this._listeners[event].push(callback);
     }
 
-    onOffPrototype.prototype.off = function(event, callback, context) {
-      debugger;
+    onOffPrototype.prototype.off = function(event, callback) {
+      var i, cb, events;
+      events = this._listeners[event];
+      if (events) {
+        for (i=0; i<events.length; i++) {
+          cb = events[i];
+          
+          // if callback not provided, remove it
+          // if callback provided and currently looking at it, remove it
+          if ( ! callback || callback && cb === callback) {
+            events.splice(events.indexOf(cb), 1);
+          }
+        }
+      }
     }
 
     onOffPrototype.prototype.trigger = function(event, data) {
