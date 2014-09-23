@@ -1,0 +1,31 @@
+{
+  "name": "angular-on-off",
+  "version": "0.0.1",
+  "main": "./angular-on-off.js",
+  "homepage": "https://github.com/ilovett/angular-on-off",
+  "authors": [
+    "Ian Lovett <i.c.lovett@gmail.com>"
+  ],
+  "description": "Aims to provide easy setup of a pub/sub pattern to your module objects or classes by providing setup for you.",
+  "keywords": [
+    "angular",
+    "pubsub",
+    "on",
+    "off",
+    "trigger",
+    "publish",
+    "publisher",
+    "subscribe",
+    "subscriber",
+    "event",
+    "events"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
