@@ -3,7 +3,6 @@
   'use strict';
 
   angular.module('ngOnOff', [])
-
   .factory('onOffPrototype', function() {
 
     var onOffPrototype = function() {
